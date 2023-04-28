@@ -29,7 +29,7 @@ import com.sukajee.cleannote.ui.theme.CleanNoteTheme
 fun NoteItem(
     note: Note,
     modifier: Modifier = Modifier,
-    cornerRadius: Dp = 16.dp,
+    cornerRadius: Dp = 8.dp,
     clipCornerSize: Dp = 30.dp,
     onDeleteClick: () -> Unit
 ) {
@@ -74,13 +74,14 @@ fun NoteItem(
             Text(
                 text = note.content,
                 style = MaterialTheme.typography.body1,
-                maxLines = 10
+                maxLines = 10,
+                color = MaterialTheme.colors.onSurface
             )
         }
 
         IconButton(
             onClick = onDeleteClick,
-            modifier = modifier.align(Alignment.BottomEnd)
+            modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete Note")
         }
